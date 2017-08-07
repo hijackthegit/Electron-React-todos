@@ -1,0 +1,40 @@
+{
+  "name": "electron-todo",
+  "version": "1.0.0",
+  "description": "A test app using electron/react/redux",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "nodejs",
+    "electron",
+    "react",
+    "redux"
+  ],
+  "author": "Jack J XIE",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
+    "electron": "^1.7.5",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "node-sass": "^4.5.3",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.6.1",
+    "webpack-sass": "^2.2.1",
+    "yarn": "^0.27.5"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "semantic-ui-react": "^0.71.3"
+  }
+}
