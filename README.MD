@@ -8,7 +8,7 @@ sudo npm install electron --unsafe-perm=true --allow-root --save-dev
 Check here [https://github.com/electron-userland/electron-prebuilt/issues/263]()
 
 Below is the node environment:
-- npm v5.3.0
+- npm: 5.3.0
 - Node: 7.10.1
 
 (If your node is other version on your OS, please use 'n' module to update it to recommended one)
@@ -25,15 +25,15 @@ sudo npm install npm@latest -g
 
 ```
 
-###Electron
+### Electron
 Please follow [https://electron.atom.io/docs/tutorial/quick-start/]() for the electron installation either using npm or downloaded package
 
-##Run
+## Run
 ```bash
 #assume you have installed electron globally
 electron .
 ```
-##Build
+## Build
 
-##Issues
+## Issues
 - semantic css needs to be load separately other than require directly using 'css-loader'
