@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Header,Segment } from 'semantic-ui-react'
+import Board from './components/board/board'
+import { Segment } from 'semantic-ui-react'
 import '!style-loader!webpack-sass!./app.scss'
-
+//have not found the way to include hashed css
+// import '!style-loader!file-loader!semantic-ui-css/semantic.min.css'
 let TITLE = 'todos'
 
 class Todos extends React.Component {
@@ -15,6 +17,7 @@ class Todos extends React.Component {
             <div className="main">
                 <h1 className="header">{TITLE}</h1>
                 <Segment raised={true}>
+                    <Board/>
                 </Segment>
             </div>);
     }
