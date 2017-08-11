@@ -1,33 +1,35 @@
 import React from 'react'
+import Filter from './filter'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import '!style-loader!webpack-sass!./info-bar.scss'
-import { Menu } from 'semantic-ui-react'
+import {Menu} from 'semantic-ui-react'
+
 
 class InfoBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            unfinished: 0,
-            activeItem: 'all'
-        }
-    }
-
-    render() {
-        return  (
+    render (){
+        const {todoLeft, todoAll, todoCompleted} = this.props
+        return (
             <div className="info-bar">
-                <div className="item-left ui left floated aligned">{this.state.unfinished} items left
-                </div>
+                <div className="item-left ui left floated aligned">{todoLeft} items left</div>
                 <Menu secondary className="menu ui right floated aligned">
-                    <Menu.Item name='All' active={this.state.activeItem === 'all'} onClick={()=>this._triggerMenu('all')} />
-                    <Menu.Item name='Active' active={this.state.activeItem === 'active'} onClick={()=>this._triggerMenu('active')} />
-                    <Menu.Item name='Completed' active={this.state.activeItem === 'completed'} onClick={()=>this._triggerMenu('completed')} />
+                    <Filter name={'All'+todoAll} filter="SHOW_ALL"/>
+                    <Filter name={'Active'+todoLeft} filter="SHOW_ACTIVE"/>
+                    <Filter name={'Completed'+todoCompleted} filter="SHOW_COMPLETED"/>
                 </Menu>
             </div>
-        );
-    }
-
-    _triggerMenu (menu) {
-        this.setState({activeItem: menu});
+        )
     }
 }
-export default InfoBar;
+
+
+const mapStateToProps = (state) => ({
+    todoLeft: state.todos.filter(t => !t.completed).length,
+    todoAll: state.todos.length,
+    todoCompleted: state.todos.filter(t => t.completed).length
+})
+
+const ConnectedInfoBar = connect(mapStateToProps)(InfoBar)
+
+export default ConnectedInfoBar
