@@ -10,5 +10,9 @@
   }
   .completed {
     text-decoration: line-through;
+    color:lightgrey;
+    label {
+      color:lightgrey!important;
+    }
   }
 }
