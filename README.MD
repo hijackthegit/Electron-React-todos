@@ -1,6 +1,6 @@
-# Electron - todo
-An Electron app for todo using redux
-## Dev environment
+# Electron - todo #
+An todos app using Electron + react + redux
+## Dev environment ##
 >About installing electron, I was keep failing by using different node/npm versions, and finally make it happen by
  ```bash
 sudo npm install electron --unsafe-perm=true --allow-root --save-dev
@@ -25,15 +25,29 @@ sudo npm install npm@latest -g
 
 ```
 
-### Electron
+### Electron ###
 Please follow [https://electron.atom.io/docs/tutorial/quick-start/]() for the electron installation either using npm or downloaded package
 
-## Run
+## Run ##
 ```bash
 #assume you have installed electron globally
 electron .
 ```
-## Build
+## Build ##
+TBD: [https://electron.atom.io/docs/tutorial/application-packaging/]()
 
-## Issues
+## Whats left ##
+Tasks supposed also support multi windows creation and ipc communications.
+
+Below tutorial and git will serve the task if time allowed: 
+- [Two window communication](https://kahlillechelt.com/how-to-communicate-between-two-electron-windows-166fdbcdc469)
+- [electron window manager](https://github.com/TamkeenLMS/electron-window-manager)
+
+## Issues ##
 - semantic css needs to be load separately other than require directly using 'css-loader'
+
+## References ##
+- [http://redux.js.org/]()
+- [https://github.com/happypoulp/redux-tutorial]()
+
+
