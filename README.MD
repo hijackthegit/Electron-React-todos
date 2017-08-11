@@ -43,11 +43,18 @@ Below tutorial and git will serve the task if time allowed:
 - [Two window communication](https://kahlillechelt.com/how-to-communicate-between-two-electron-windows-166fdbcdc469)
 - [electron window manager](https://github.com/TamkeenLMS/electron-window-manager)
 
+## References ##
+- [Redux](http://redux.js.org/)
+- [Redux tutorial](https://github.com/happypoulp/redux-tutorial)
+- [Electron multi window demo](https://github.com/ungoldman/electron-multiple-windows-demo)
+- [Ipc communication](https://kahlillechelt.com/how-to-communicate-between-two-electron-windows-166fdbcdc469)
+- [Electron’s IPC Modules and How to Use Them](https://medium.com/@hamzasurti/in-progress-6959b733a55a)
+
+## Highlights ##
+- Redux
+- Electron ipc main/renderer communication
+
 ## Issues ##
 - semantic css needs to be load separately other than require directly using 'css-loader'
-
-## References ##
-- [http://redux.js.org/]()
-- [https://github.com/happypoulp/redux-tutorial]()
-
-
+- remove todo does not work well
+- window does not syncronize with each other

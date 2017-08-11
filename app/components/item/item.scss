@@ -8,6 +8,9 @@
       height: 2em;
     }
   }
+  .close {
+    float: right;
+  }
   .completed {
     text-decoration: line-through;
     color:lightgrey;

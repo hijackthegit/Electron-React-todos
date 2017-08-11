@@ -2,7 +2,7 @@ const path = require("path");
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin'); //this will help generate index.html directly, check plugins usage
-
+// const webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 
 module.exports = {
     entry: './app/app.jsx',
@@ -55,6 +55,7 @@ module.exports = {
             }
         ]
     },
+    target: 'electron-renderer',
     plugins: [
         new ExtractTextPlugin({
             filename: "[name].[contenthash].css",

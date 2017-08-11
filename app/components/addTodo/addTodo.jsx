@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { addTodo } from '../../actions'
 import {Form, Input} from 'semantic-ui-react'
 
+// import {ipcRenderer} from 'electron'
+
 import '!style-loader!webpack-sass!./addTodo.scss'
 
 let AddTodo = ({ dispatch }) => {

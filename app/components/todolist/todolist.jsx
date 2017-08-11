@@ -1,16 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { toggleTodo } from '../../actions'
+import { toggleTodo, removeTodo } from '../../actions'
 import PropTypes from 'prop-types'
 import Todo from '../item/item'
 
-const TodoList = ({ todos, onTodoClick }) => (
+const TodoList = ({ todos, onTodoClick, onRemoveClick }) => (
     <div className="todo-list">
         {todos.map(todo =>
             <Todo
                 key={todo.id}
                 {...todo}
                 onClick={() => onTodoClick(todo.id)}
+                removeClick={() => onRemoveClick(todo.id)}
             />
         )}
     </div>
@@ -22,7 +23,8 @@ TodoList.propTypes = {
         completed: PropTypes.bool.isRequired,
         text: PropTypes.string.isRequired
     }).isRequired).isRequired,
-    onTodoClick: PropTypes.func.isRequired
+    onTodoClick: PropTypes.func.isRequired,
+    onRemoveClick: PropTypes.func.isRequired
 }
 
 const getVisibleTodos = (todos, filter) => {
@@ -43,7 +45,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-    onTodoClick: toggleTodo
+    onTodoClick: toggleTodo,
+    onRemoveClick: removeTodo
 }
 
 const VisibleTodoList = connect(

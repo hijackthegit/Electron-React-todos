@@ -1,14 +1,18 @@
 import _ from 'lodash'
+import {ipcRenderer} from 'electron'
 
 const todos = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
-            console.log('reducer todo', action)
+            ipcRenderer.send('content-changes', action)
             return _.concat(state, {
                 id: action.id,
                 text: action.text,
                 completed: false
             });
+        case 'REMOVE_TODO':
+            ipcRenderer.send('content-changes', action)
+            return _.remove(_.cloneDeep(state), {id: action.id}); //no mutation!!!_.remove will mutate array
         case 'TOGGLE_TODO':
             return state.map(todo =>
                 (todo.id === action.id)
