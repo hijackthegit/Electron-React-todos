@@ -3,19 +3,27 @@ import { connect } from 'react-redux'
 import { toggleTodo, removeTodo } from '../../actions'
 import PropTypes from 'prop-types'
 import Todo from '../item/item'
+import {ipcRenderer} from 'electron'
 
-const TodoList = ({ todos, onTodoClick, onRemoveClick }) => (
-    <div className="todo-list">
-        {todos.map(todo =>
-            <Todo
-                key={todo.id}
-                {...todo}
-                onClick={() => onTodoClick(todo.id)}
-                removeClick={() => onRemoveClick(todo.id)}
-            />
-        )}
-    </div>
-)
+const TodoList = ({ todos, onTodoClick, onRemoveClick }) => {
+    ipcRenderer.on('remove-todo', (event, msg)=>{
+        onRemoveClick(msg.id);
+    })
+    return (<div className="todo-list">
+        {
+
+
+            todos.map(todo =>
+                <Todo
+                    key={todo.id}
+                    {...todo}
+                    onClick={() => onTodoClick(todo.id)}
+                    removeClick={() => onRemoveClick(todo.id)}
+                />
+            )}
+    </div>)
+}
+
 
 TodoList.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.shape({

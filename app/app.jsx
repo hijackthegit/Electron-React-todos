@@ -10,7 +10,7 @@ class Todos extends React.Component {
     render() {
         return (
             <div className="main">
-                <h1 className="header">todos</h1>
+                <h1 className="header" id="header">todos</h1>
                 <Segment raised={true}>
                     <Board/>
                 </Segment>

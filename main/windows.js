@@ -5,9 +5,9 @@ const config = require('./config')
 
 const list = []
 
-ipcMain.on('content-changes', (event, args)=>{
-  console.log('content changes ', args)
-})
+const windowConfig = ()=>{
+
+}
 
 function create (id) {
   const win = new BrowserWindow({
@@ -25,12 +25,26 @@ function create (id) {
   if (config.DEBUG) win.webContents.openDevTools()
 
   win.webContents.on('did-finish-load', function () {
-    win.webContents.send('id', win.id)
+    win.webContents.send('id', id)
   })
 
   win.on('closed', function () {
     destroy(win)
   })
+
+    ipcMain.on('content-changes', (event, args)=>{
+        console.log('content changes ', args);
+        switch(args.type){
+            case 'ADD_TODO':
+                event.sender.send('add-todo', args.text);
+                break;
+            case 'REMOVE_TODO':
+                event.sender.send('remove-todo', args);
+                break;
+            default:
+                break;
+        }
+    })
 }
 
 function destroy (win) {

@@ -7,9 +7,14 @@ import {Form, Input} from 'semantic-ui-react'
 
 import '!style-loader!webpack-sass!./addTodo.scss'
 
+import {ipcRenderer} from 'electron'
+
+
 let AddTodo = ({ dispatch }) => {
     let input
-
+    ipcRenderer.on('add-todo', (event, msg)=>{
+        dispatch(addTodo(msg));
+    })
     return (
         <div className="addTodo">
             <Form onSubmit={e => {

@@ -10,7 +10,6 @@ import AddTodo from '../addTodo/addTodo'
 import TodoList from '../todolist/todolist'
 import InfoBar from '../info-bar/info-bar'
 
-
 const todoStore = createStore(reducer);
 
 import '!style-loader!webpack-sass!./board.scss'
