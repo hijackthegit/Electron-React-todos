@@ -12,7 +12,7 @@ const todos = (state = [], action) => {
             });
         case 'REMOVE_TODO':
             ipcRenderer.send('content-changes', action)
-            return _.remove(_.cloneDeep(state), {id: action.id}); //no mutation!!!_.remove will mutate array
+            return state.filter(item=>(item.id!==action.id)); //no mutation!!!_.remove will mutate array
         case 'TOGGLE_TODO':
             return state.map(todo =>
                 (todo.id === action.id)
