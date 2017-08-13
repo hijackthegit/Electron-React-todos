@@ -1,10 +1,13 @@
 import _ from 'lodash'
 import {ipcRenderer} from 'electron'
 
+import windowManager from 'electron-window-manager'
+
 const todos = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
             ipcRenderer.send('content-changes', action)
+            windowManager.sharedData.set('action',action)
             return _.concat(state, {
                 id: action.id,
                 text: action.text,

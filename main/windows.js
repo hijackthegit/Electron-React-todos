@@ -5,8 +5,21 @@ const config = require('./config')
 
 const list = []
 
-const windowConfig = ()=>{
-
+const windowConfig = (id)=>{
+    return [
+        'todo '+id,
+        `${config.APP_NAME} - board ` + id,
+        config.INDEX,
+        false,
+        {
+            'width': 800,
+            'height': 450,
+            'position': [100+20*id,50+20*id],
+            // 'layout': 'simple',
+            'showDevTools': false,
+            'resizable': true
+        }
+    ]
 }
 
 function create (id) {
@@ -53,4 +66,4 @@ function destroy (win) {
   win = null
 }
 
-module.exports = { list, create, destroy }
+module.exports = { list, create, destroy, windowConfig }
