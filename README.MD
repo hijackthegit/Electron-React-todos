@@ -1,5 +1,5 @@
 # Electron - todo #
-An todos app using Electron + react + redux
+A todos app using Electron + react + redux
 ## Dev environment ##
 >About installing electron, I was keep failing by using different node/npm versions, and finally make it happen by
  ```bash
