@@ -31,17 +31,10 @@ Please follow [https://electron.atom.io/docs/tutorial/quick-start/]() for the el
 ## Run ##
 ```bash
 #assume you have installed electron globally
-electron .
+npm start
 ```
 ## Build ##
 TBD: [https://electron.atom.io/docs/tutorial/application-packaging/]()
-
-## Whats left ##
-Tasks supposed also support multi windows creation and ipc communications.
-
-Below tutorial and git will serve the task if time allowed: 
-- [Two window communication](https://kahlillechelt.com/how-to-communicate-between-two-electron-windows-166fdbcdc469)
-- [electron window manager](https://github.com/TamkeenLMS/electron-window-manager)
 
 ## References ##
 - [Redux](http://redux.js.org/)
@@ -49,12 +42,15 @@ Below tutorial and git will serve the task if time allowed:
 - [Electron multi window demo](https://github.com/ungoldman/electron-multiple-windows-demo)
 - [Ipc communication](https://kahlillechelt.com/how-to-communicate-between-two-electron-windows-166fdbcdc469)
 - [Electron’s IPC Modules and How to Use Them](https://medium.com/@hamzasurti/in-progress-6959b733a55a)
+- [Two window communication](https://kahlillechelt.com/how-to-communicate-between-two-electron-windows-166fdbcdc469)
+- [electron window manager](https://github.com/TamkeenLMS/electron-window-manager)
 
 ## Highlights ##
 - Redux
 - Electron ipc main/renderer communication
 
+## Whats left ##
+Considering to use electron-window-manager for the data sharing across windows
+
 ## Issues ##
 - semantic css needs to be load separately other than require directly using 'css-loader'
-- remove todo does not work well
-- window does not syncronize with each other

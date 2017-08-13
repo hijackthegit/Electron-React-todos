@@ -4,7 +4,8 @@
   "description": "A test app using electron/react/redux",
   "main": "main.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "electron ."
   },
   "keywords": [
     "nodejs",
