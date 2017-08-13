@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../../actions'
+import { addTodo, refreshTodos } from '../../actions'
 import {Form, Input} from 'semantic-ui-react'
 
 // import {ipcRenderer} from 'electron'
@@ -12,8 +12,8 @@ import {ipcRenderer} from 'electron'
 
 let AddTodo = ({ dispatch }) => {
     let input
-    ipcRenderer.on('add-todo', (event, msg)=>{
-        dispatch(addTodo(msg));
+    ipcRenderer.on('update-content', (event, msg)=>{
+        dispatch(refreshTodos(msg));
     })
     return (
         <div className="addTodo">

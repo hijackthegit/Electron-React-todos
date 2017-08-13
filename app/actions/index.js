@@ -17,3 +17,7 @@ export const removeTodo = (id) => ({
   type: 'REMOVE_TODO',
   id
 })
+export const refreshTodos = (todos) => ({
+  type: 'REFRESH_TODOS',
+    todos
+})

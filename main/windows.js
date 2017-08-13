@@ -1,13 +1,7 @@
-const electron = require('electron')
-const BrowserWindow = electron.BrowserWindow
-const ipcMain = electron.ipcMain
+const {BrowserWindow} = require('electron')
 const config = require('./config')
 
 const list = []
-
-const windowConfig = ()=>{
-
-}
 
 function create (id) {
   const win = new BrowserWindow({
@@ -19,7 +13,7 @@ function create (id) {
 
   win.loadURL(config.INDEX)
   win.setTitle(`${config.APP_NAME} - board ` + id)
-  win.setPosition(100+20*id,50+20*id)
+  win.setPosition(100+80*id,50+80*id)
   list.push(win)
 
   if (config.DEBUG) win.webContents.openDevTools()
@@ -32,19 +26,8 @@ function create (id) {
     destroy(win)
   })
 
-    ipcMain.on('content-changes', (event, args)=>{
-        console.log('content changes ', args);
-        switch(args.type){
-            case 'ADD_TODO':
-                event.sender.send('add-todo', args.text);
-                break;
-            case 'REMOVE_TODO':
-                event.sender.send('remove-todo', args);
-                break;
-            default:
-                break;
-        }
-    })
+    return win
+
 }
 
 function destroy (win) {
