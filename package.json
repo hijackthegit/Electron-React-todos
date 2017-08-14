@@ -6,8 +6,7 @@
   "scripts": {
     "test": "test",
     "start": "electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "build": "node build"
   },
   "postinstall": "electron-builder install-app-deps",
   "keywords": [
@@ -39,6 +38,7 @@
   },
   "dependencies": {
     "electron-window-manager": "^1.0.4",
+    "minimist": "^1.2.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -46,5 +46,11 @@
     "redux": "^3.7.2",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.71.3"
+  },
+  "build": {
+    "appId": "electron-todos",
+    "directories": {
+      "output": "./build/dist"
+    }
   }
 }

@@ -1,6 +1,7 @@
 const {app, ipcMain} = require('electron')
 const windows = require('./main/windows')
 const _ = require('lodash')
+const minimist = require('minimist') //looks like we have to include this for electron-builder: https://github.com/electron-userland/electron-packager/issues/527
 
 app.on('ready', function () {
     let todoWindows = [

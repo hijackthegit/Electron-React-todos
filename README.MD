@@ -24,9 +24,11 @@ sudo n 7.10.1
 sudo npm install npm@latest -g
 
 ```
-
-### Electron ###
-Please follow [https://electron.atom.io/docs/tutorial/quick-start/]() for the electron installation either using npm or downloaded package
+## Prerequisites ##
+Below are recommend install globally (add sudo ahead for linux) 
+```bash
+npm i webpack webpack-dev-server electron electron-builder -g
+```
 
 ## Run ##
 ```bash
@@ -34,8 +36,21 @@ Please follow [https://electron.atom.io/docs/tutorial/quick-start/]() for the el
 npm start
 ```
 ## Build ##
-Use electron-builder [https://www.npmjs.com/package/electron-builder]()
-
+Here we using [https://www.npmjs.com/package/electron-builder]() for the app packaging
+> If you keep failure on running the built app saying missing dependencies, require the missing dependencies in you main.js 
+which should be in root folder: [https://github.com/electron-userland/electron-packager/issues/527]()
+### Windows ###
+```bash
+electron-builder -w
+```
+### Linux ###
+```bash
+electron-builder -l
+```
+### OSX ###
+```bash
+electron-builder -m
+```
 ## References ##
 - [Redux](http://redux.js.org/)
 - [Redux tutorial](https://github.com/happypoulp/redux-tutorial)
