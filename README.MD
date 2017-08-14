@@ -41,15 +41,8 @@ Here we using [https://www.npmjs.com/package/electron-builder]() for the app pac
 which should be in root folder: [https://github.com/electron-userland/electron-packager/issues/527]()
 ### Windows ###
 ```bash
-electron-builder -w
-```
-### Linux ###
-```bash
-electron-builder -l
-```
-### OSX ###
-```bash
-electron-builder -m
+#you need to specify target platform
+npm run build
 ```
 ## References ##
 - [Redux](http://redux.js.org/)
