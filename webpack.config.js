@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin'); //this will help gener
 module.exports = {
     entry: './app/app.jsx',
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, '/pub'),
         filename: 'bundle.js'
     },
     resolve: {

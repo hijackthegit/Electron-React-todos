@@ -34,7 +34,7 @@ Please follow [https://electron.atom.io/docs/tutorial/quick-start/]() for the el
 npm start
 ```
 ## Build ##
-TBD: [https://electron.atom.io/docs/tutorial/application-packaging/]()
+Use electron-builder [https://www.npmjs.com/package/electron-builder]()
 
 ## References ##
 - [Redux](http://redux.js.org/)

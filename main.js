@@ -10,10 +10,9 @@ app.on('ready', function () {
     ]
 
     ipcMain.on('content-changes', (event, args)=>{
-        console.log(event.sender)
         todoWindows.map(win=>{
             //don't send back to sender
-            if(!_.isEqual(event.sender,win.webContents)) {
+            if(win && !_.isEqual(event.sender,win.webContents)) {
                 win.webContents.send('update-content', args)
             }
         })
